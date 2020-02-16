@@ -1,3 +1,10 @@
+/* TODO:
+ *  Add XInput support
+ *  Use beeper as vibration motor.  This is definetly needed and is not something I came up with in the middle of the night
+ */
+
+#include <XInput.h>
+
 int button[] = {0, 1, 2, 3, 4, 5, 6};
 int hat1[] = {7, 8, 9, 10}; // Up, down, left, right
 int hat2[] = {11, A3, A4, A5};
