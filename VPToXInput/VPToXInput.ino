@@ -43,10 +43,10 @@ void loop() {
     if(!digitalRead(hat2[i]))
       XInput.press(xFace[i]);
 
-    if(!digitalRead(hat1[i]))
+    if(digitalRead(hat1[i]))
       XInput.release(xDPad[i]);
       
-    if(!digitalRead(hat2[i]))
+    if(digitalRead(hat2[i]))
       XInput.release(xFace[i]);    
   }
 
@@ -63,9 +63,11 @@ void loop() {
 
   //uint32_t leverPos = analogRead(lever) * 2^32;
 
-  uint32_t x = analogRead(yoke);
+  int32_t x = analogRead(yoke);
   uint32_t y = analogRead(push);
 
+  x = abs(x - 1024);
+  
   //uint32_t leverPos = analogRead(lever);
   
   XInput.setJoystick(JOY_LEFT, x, y);
