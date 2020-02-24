@@ -1,5 +1,4 @@
 /* TODO:
- *  Add XInput support
  *  Use beeper as vibration motor.  This is definetly needed and is not something I came up with in the middle of the night
  */
 
@@ -14,9 +13,7 @@ uint8_t xDPad[] = {DPAD_UP, DPAD_DOWN, DPAD_LEFT, DPAD_RIGHT}; //hat1[]
 uint8_t xFace[] = {BUTTON_Y, BUTTON_A, BUTTON_X, BUTTON_B}; //hat2[]
 
 int yoke = A0;
-//int push = A1;
-//int lever = A2;
-
+int lever = A1;
 int push = A2;
 void setup() {
   // put your setup code here, to run once:
@@ -58,41 +55,13 @@ void loop() {
   }
 
   //Read axis
-  //uint32_t x = analogRead(push) * 2^32;
-  //uint32_t y = analogRead(yoke) * 2^32;
-
-  //uint32_t leverPos = analogRead(lever) * 2^32;
-
   int32_t x = analogRead(yoke);
   uint32_t y = analogRead(push);
+  uint32_t leverPos = analogRead(lever);
 
+  //Invert X axis
   x = abs(x - 1024);
   
-  //uint32_t leverPos = analogRead(lever);
-  
   XInput.setJoystick(JOY_LEFT, x, y);
-  //XInput.setTrigger(TRIGGER_RIGHT, leverPos);
-  
-  /*   DEBUG CODE
-  for (int i = 1; i <= 6; ++i) {
-    Serial.print(digitalRead(button[i]));
-  }
-  Serial.print("\t");
-  for (int i = 0; i < 4; ++i) {
-    Serial.print(digitalRead(hat1[i]));
-  }
-  Serial.print("\t");
-  for (int i = 0; i < 4; ++i) {
-    Serial.print(digitalRead(hat2[i]));
-  }
-
-  Serial.print("\t");
-  Serial.print(analogRead(yoke));
-  Serial.print("\t");
-  Serial.print(analogRead(push));
-  Serial.print("\t");
-  Serial.print(analogRead(lever));
-
-  Serial.println();
-  */
+  XInput.setTrigger(TRIGGER_RIGHT, leverPos);
 }
