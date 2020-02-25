@@ -154,6 +154,16 @@
 </layers>
 <board>
 <plain>
+<polygon width="0.1524" layer="21">
+<vertex x="8.89" y="36.83"/>
+<vertex x="15.24" y="36.83"/>
+<vertex x="15.24" y="16.51"/>
+<vertex x="8.89" y="16.51"/>
+<vertex x="8.89" y="15.24"/>
+<vertex x="16.51" y="15.24"/>
+<vertex x="16.51" y="38.1"/>
+<vertex x="8.89" y="38.1"/>
+</polygon>
 </plain>
 <libraries>
 <library name="adafruit" urn="urn:adsk.eagle:library:420">

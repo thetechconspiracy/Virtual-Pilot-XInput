@@ -164,6 +164,9 @@
 <vertex x="16.51" y="38.1"/>
 <vertex x="8.89" y="38.1"/>
 </polygon>
+<dimension x1="0" y1="29.21" x2="68.58" y2="29.21" x3="34.29" y3="-12.7" textsize="1.778" layer="21"/>
+<dimension x1="6.35" y1="0" x2="6.35" y2="53.34" x3="-10.16" y3="26.67" textsize="1.778" layer="21"/>
+<text x="60.96" y="26.67" size="1.778" layer="22" rot="MR0">JLCJLCJLCJLC</text>
 </plain>
 <libraries>
 <library name="adafruit" urn="urn:adsk.eagle:library:420">
